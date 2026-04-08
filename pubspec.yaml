@@ -16,6 +16,7 @@ dependencies:
   lottie: ^3.3.2
   dartz: ^0.10.1
   equatable: ^2.0.8
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:
