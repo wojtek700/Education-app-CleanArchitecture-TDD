@@ -31,7 +31,7 @@ void main() {
       });
 
       test(
-        'should throw a [CacheException] when there is an error cashing the data',
+        'should throw a[CacheException]when there is an error cashing the data',
         () async {
           when(() => prefs.setBool(any(), any())).thenThrow(Exception());
 
