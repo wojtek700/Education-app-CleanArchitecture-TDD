@@ -10,8 +10,8 @@ abstract class OnBoardingLocalDataSource {
 
 const kFirstTimerKey = 'first_timer';
 
-class OnBoardingLocalDataSourceImpl implements OnBoardingLocalDataSource {
-  const OnBoardingLocalDataSourceImpl(this._prefs);
+class OnBoardingLocalDataSrcImpl implements OnBoardingLocalDataSource {
+  const OnBoardingLocalDataSrcImpl(this._prefs);
 
   final SharedPreferences _prefs;
 

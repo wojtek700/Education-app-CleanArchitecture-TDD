@@ -13,7 +13,7 @@ void main() {
   setUp(
     () {
       prefs = MockSharedPreferences();
-      localDataSource = OnBoardingLocalDataSourceImpl(prefs);
+      localDataSource = OnBoardingLocalDataSrcImpl(prefs);
     },
   );
 
