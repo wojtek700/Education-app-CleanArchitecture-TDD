@@ -7,11 +7,19 @@ class DashboardController extends ChangeNotifier {
   List<int> _indexHistory = [0];
   final List<Widget> _screens = [
     ChangeNotifierProvider(
-      create: (_) => TabNavigator(
-        TabItem(
-          child: const Placeholder(),
-        ),
-      ),
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
       child: const PersistentView(),
     ),
   ];
