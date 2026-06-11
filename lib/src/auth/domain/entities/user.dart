@@ -39,6 +39,8 @@ class LocalUser extends Equatable {
   final List<String> following;
   final List<String> followers;
 
+  bool get isAdmin => email == 'yewep47404@xgh6.com';
+
   @override
   List<Object?> get props => [
     uid,
