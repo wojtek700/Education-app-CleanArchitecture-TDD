@@ -20,6 +20,9 @@ dependencies:
   bloc: ^9.2.0
   get_it: ^9.2.1
   flutter_bloc: ^9.1.1
+  flutter_tindercard:
+    git:
+      url: https://github.com/NonymousMorlock/flutter_tindercard.git
   smooth_page_indicator: ^2.0.1
   firebase_core: ^4.9.0
   firebase_auth: ^6.5.1
