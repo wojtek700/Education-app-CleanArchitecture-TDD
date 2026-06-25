@@ -4,7 +4,6 @@ import 'package:education_app/core/common/widgets/gradient_background.dart';
 import 'package:education_app/core/extensions/context_extensions.dart';
 import 'package:education_app/core/extensions/int_extensions.dart';
 import 'package:education_app/core/res/media_res.dart';
-import 'package:education_app/src/course/data/models/course_model.dart';
 import 'package:education_app/src/course/domain/entities/course.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +16,6 @@ class CourseDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final course = (this.course as CourseModel).copyWith(
-      numberOfVideos: 2,
-      numberOfExams: 3,
-      numberOfMaterials: 30,
-    );
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
