@@ -61,6 +61,42 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         (_) => CourseDetailsScreen(settings.arguments! as Course),
         settings: settings,
       );
+    case AddVideoView.routeName:
+      return _pageBuilder(
+        (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => sl<CourseCubit>()),
+            BlocProvider(create: (_) => sl<VideoCubit>()),
+            BlocProvider(create: (_) => sl<NotificationCubit>()),
+          ],
+          child: const AddVideoView(),
+        ),
+        settings: settings,
+      );
+    case AddMaterialsView.routeName:
+      return _pageBuilder(
+        (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => sl<CourseCubit>()),
+            BlocProvider(create: (_) => sl<MaterialCubit>()),
+            BlocProvider(create: (_) => sl<NotificationCubit>()),
+          ],
+          child: const AddMaterialsView(),
+        ),
+        settings: settings,
+      );
+    case AddExamView.routeName:
+      return _pageBuilder(
+        (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => sl<CourseCubit>()),
+            BlocProvider(create: (_) => sl<ExamCubit>()),
+            BlocProvider(create: (_) => sl<NotificationCubit>()),
+          ],
+          child: const AddExamView(),
+        ),
+        settings: settings,
+      );
     default:
       return _pageBuilder(
         (_) => const PageUnderConstruction(),
@@ -75,10 +111,10 @@ PageRouteBuilder<dynamic> _pageBuilder(
 }) {
   return PageRouteBuilder(
     settings: settings,
-    transitionsBuilder: (_, animation, __, child) => FadeTransition(
+    transitionsBuilder: (_, animation, _, child) => FadeTransition(
       opacity: animation,
       child: child,
     ),
-    pageBuilder: (context, _, __) => page(context),
+    pageBuilder: (context, _, _) => page(context),
   );
 }

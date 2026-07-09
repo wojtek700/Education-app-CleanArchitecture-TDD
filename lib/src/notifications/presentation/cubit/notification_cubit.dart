@@ -38,7 +38,7 @@ class NotificationCubit extends Cubit<NotificationState> {
     final result = await _clear(notificationId);
     result.fold(
       (failure) => emit(NotificationError(failure.errorMessage)),
-      (_) => emit(const NotificationInitial()),
+      (_) => emit(const NotificationCleared()),
     );
   }
 
@@ -47,7 +47,7 @@ class NotificationCubit extends Cubit<NotificationState> {
     final result = await _clearAll();
     result.fold(
       (failure) => emit(NotificationError(failure.errorMessage)),
-      (_) => emit(const NotificationInitial()),
+      (_) => emit(const NotificationCleared()),
     );
   }
 
@@ -64,7 +64,7 @@ class NotificationCubit extends Cubit<NotificationState> {
     final result = await _sendNotification(notification);
     result.fold(
       (failure) => emit(NotificationError(failure.errorMessage)),
-      (_) => emit(const NotificationSent()),
+      (_) => emit(const NotificationCleared()),
     );
   }
 

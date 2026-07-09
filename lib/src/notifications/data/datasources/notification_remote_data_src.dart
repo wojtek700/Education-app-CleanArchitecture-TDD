@@ -4,6 +4,7 @@ import 'package:education_app/core/utils/datasource_utils.dart';
 import 'package:education_app/src/notifications/data/models/notification_model.dart';
 import 'package:education_app/src/notifications/domain/entities/notification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 abstract class NotificationRemoteDataSrc {
   const NotificationRemoteDataSrc();
@@ -84,11 +85,14 @@ class NotificationRemoteDataSrcImpl implements NotificationRemoteDataSrc {
           .orderBy('sentAt', descending: true)
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs
-                .map((doc) => NotificationModel.fromMap(doc.data()))
-                .toList(),
+            (snapshot) => snapshot.docs.map((doc) {
+              return NotificationModel.fromMap(doc.data());
+            }).toList(),
           );
-      return notificationsStream.handleError((dynamic error) {
+      return notificationsStream.handleError((
+        dynamic error,
+        dynamic stackTrace,
+      ) {
         if (error is FirebaseException) {
           throw ServerException(
             message: error.message ?? 'Unknown error occurred',
