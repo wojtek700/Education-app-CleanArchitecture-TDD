@@ -42,6 +42,7 @@ dependencies:
   http: ^1.6.0
   chewie: ^1.14.1
   video_player: ^2.11.1
+  file_picker: ^3.0.4
 
 dev_dependencies:
   flutter_test:
