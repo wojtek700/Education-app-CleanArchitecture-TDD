@@ -4,7 +4,6 @@ import 'package:education_app/core/utils/datasource_utils.dart';
 import 'package:education_app/src/notifications/data/models/notification_model.dart';
 import 'package:education_app/src/notifications/domain/entities/notification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 
 abstract class NotificationRemoteDataSrc {
   const NotificationRemoteDataSrc();

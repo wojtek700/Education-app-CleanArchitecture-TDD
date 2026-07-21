@@ -5,6 +5,7 @@ import 'package:education_app/core/extensions/context_extensions.dart';
 import 'package:education_app/core/extensions/int_extensions.dart';
 import 'package:education_app/core/res/media_res.dart';
 import 'package:education_app/src/course/domain/entities/course.dart';
+import 'package:education_app/src/course/features/videos/presentation/views/course_videos_view.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetailsScreen extends StatelessWidget {
@@ -68,7 +69,7 @@ class CourseDetailsScreen extends StatelessWidget {
                             'Watch our tutorial '
                             'videos for ${course.title}',
                         onTap: () => Navigator.of(context).pushNamed(
-                          '/unknown-route',
+                          CourseVideosView.routeName,
                           arguments: course,
                         ),
                       ),
