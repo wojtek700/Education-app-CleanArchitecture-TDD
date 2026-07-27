@@ -8,6 +8,7 @@ import 'package:education_app/src/course/features/exams/data/models/user_exam_mo
 import 'package:education_app/src/course/features/exams/domain/entities/exam.dart';
 import 'package:education_app/src/course/features/exams/domain/entities/user_exam.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 abstract class ExamRemoteDataSrc {
   Future<List<ExamModel>> getExams(String courseId);
@@ -299,10 +300,11 @@ class ExamRemoteDataSrcImpl implements ExamRemoteDataSrc {
       );
     } on ServerException {
       rethrow;
-    } catch (e) {
+    } catch (e, s) {
+      debugPrintStack(stackTrace: s);
       throw ServerException(
         message: e.toString(),
-        statusCode: '500',
+        statusCode: '505',
       );
     }
   }
