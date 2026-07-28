@@ -63,7 +63,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case ExamDetailsView.routeName:
       return _pageBuilder(
-        (_) => ExamDetailsView(settings.arguments! as Exam),
+        (_) => BlocProvider(
+          create: (context) => sl<ExamCubit>(),
+          child: ExamDetailsView(settings.arguments! as Exam),
+        ),
         settings: settings,
       );
     case AddVideoView.routeName:
