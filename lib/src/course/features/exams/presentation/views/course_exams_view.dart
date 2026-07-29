@@ -38,7 +38,7 @@ class _CourseExamsViewState extends State<CourseExamsView> {
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('${widget.course.title} Materials'),
+        title: Text('${widget.course.title} Exams'),
         leading: const NestedBackButton(),
       ),
       body: BlocConsumer<ExamCubit, ExamState>(

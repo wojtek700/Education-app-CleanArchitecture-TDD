@@ -48,6 +48,8 @@ dependencies:
   file_icon:
     git:
       url: https://github.com/NonymousMorlock/file_icon
+  intl: ^0.20.2
+  step_progress_indicator: ^1.0.2
 
 dev_dependencies:
   flutter_test:
