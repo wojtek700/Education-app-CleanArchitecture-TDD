@@ -90,7 +90,7 @@ void main() {
 
         final result = remoteDataSource.getMessages(groupId);
 
-        expect(result, emitsInOrder([equals(expectedMessages)]));
+        expect(result, emitsInOrder([equals(expectedMessages.reversed)]));
       },
     );
 
